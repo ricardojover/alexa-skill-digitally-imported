@@ -1,0 +1,78 @@
+﻿{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "digitally imported",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "PlayAudioIntent",
+          "slots": [
+            {
+              "name": "Channel",
+              "type": "DI_CHANNELS"
+            }
+          ],
+          "samples": [
+            "Play {Channel}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "DI_CHANNELS",
+          "values": [
+            {
+              "id": "Vivaldi",
+              "name": {
+                "value": "vivaldi"
+              }
+            },
+            {
+              "id": "baroque",
+              "name": {
+                "value": "baroque"
+              }
+            },
+            {
+              "id": "nightcore",
+              "name": {
+                "value": "nightcore"
+              }
+            },
+            {
+              "id": "hardstyle",
+              "name": {
+                "value": "hardstyle"
+              }
+            },
+            {
+              "id": "hardcore",
+              "name": {
+                "value": "hardcore"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "alexa-skill-digitally-imported",
+  "version": "1.0.0",
+  "description": "Web server for your Amazon Alexa skill to play radios on Digitally Imported, Classical Radio, Radio Tunes, Jazz Radio and Rock Radio",
+  "main": "server.js",
+  "author": "Ricardo Jover",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricardojover/alexa-skill-digitally-imported"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "alexa-sdk": "^1.0.25",
+    "aws-lambda-mock-context": "^3.1.1",
+    "express": "^4.16.3",
+    "request": "^2.85.0",
+    "body-parser": "^1.18.2"
+  }
+}
