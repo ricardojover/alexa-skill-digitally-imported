@@ -4,15 +4,11 @@ var config = require('./config');
 var lambda = require('./lambda');
 var express = require('express');
 var request = require('request');
-var https = require('https');
-var fs = require('fs');
 var bodyParser = require('body-parser');
 var context = require('aws-lambda-mock-context');
-
-const httpsOptions = {
-    key: fs.readFileSync(config.certs.privateKey),
-    cert: fs.readFileSync(config.certs.certificate)
-};
+var server = null;
+var httpsOptions = null;
+var fs = null;
 
 var app = express();
 app.use(bodyParser.json({ type: 'application/json' })); //body-parser extracts the entire body portion of an incoming request stream and exposes it on req.body.
@@ -49,8 +45,20 @@ app.get('/di/:channel', function (req, res) {
     }
 });
 
-var httpsServer = https.createServer(httpsOptions, app);
+var myServer = null;
+server = require(config.server.protocol);
 
-httpsServer.listen(config.httpsServer.port, function () {
-    console.log("Server started on " + this.address().address + ":" + this.address().port);
+if (config.server.protocol == 'https') {
+    fs = require('fs');
+    httpsOptions = {
+        key: fs.readFileSync(config.certs.privateKey),
+        cert: fs.readFileSync(config.certs.certificate)
+    };
+    myServer = server.createServer(httpsOptions, app);
+} else {
+    myServer = server.createServer(app);
+}
+
+myServer.listen(config.server.port, config.server.internalIP, function () {
+    console.log("Server started on " + config.server.protocol + "://" +  this.address().address + ":" + this.address().port);
 });

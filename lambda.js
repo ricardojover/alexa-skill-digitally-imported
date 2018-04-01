@@ -32,7 +32,7 @@ function getChannelsList() {
 
 function getURL(channelName, validate) {
     validate = validate ? "1" : "0";
-    let url = "https://" + config.httpsServer.url + "/" + channelName.replace(/\s+/g, '') + "?validate=" + validate;
+    let url = "https://" + config.server.url + "/" + channelName.replace(/\s+/g, '') + "?validate=" + validate;
     return url;
 }
 

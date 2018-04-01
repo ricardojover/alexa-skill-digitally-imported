@@ -5,10 +5,17 @@ const di_url = 'http://prem2.di.fm:80/';
 const classical = "Classical Radio";
 const di = "Digitally Imported";
 
+var protocols = {
+    HTTP: "http",
+    HTTPS: "https"
+}
+
 module.exports = {
-    httpsServer: {
-        port: <your-port>,	// e.g. 443
-        url: '<your-server-url>/di'
+    server: {
+        internalIP: '<your-internal-ip>', // if you are not sure, just write '0.0.0.0'
+        port: '<your-port>',	// e.g. 443 
+        url: '<your-server-url>/di',
+        protocol: protocols.HTTP // possible values protocols.HTTP or protocols.HTTPS
     },
 	diFM : {
 		listenKey 	: '<your-listen-key>', 
