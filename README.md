@@ -54,3 +54,18 @@ Since I've created objects for every channel there are many possible options and
 - title, site and imageUrl are used for the cards you will see in your Alexa app.
 
 Alexa will also tell you if there is a problem with the internet radio.
+
+## Tips
+[Host a Custom Skill as a Web Service](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html)
+- The service must accept requests on port 443.
+
+[Include a Card in Your Skill's Response](https://developer.amazon.com/fr/docs/custom-skills/include-a-card-in-your-skills-response.html)
+- An image cannot be larger than 2 MB and it can be provided in the following formats:
+	- JPEG
+    - PNG
+- When including an image, you provide two URLs: a smaller resolution image and a larger resolution image. The different sizes are used when displaying home cards on different sized screens:
+
+	| Property | Description | Recommended Size (in pixels) |
+	|----------|-------------|------------------------------|
+	| smallImageUrl | Displayed on smaller screens | 720w x 480h |
+	| largeImageUrl | Displayed on larger screens | 1200w x 800h |
