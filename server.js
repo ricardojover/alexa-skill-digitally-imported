@@ -13,10 +13,10 @@ var fs = null;
 var app = express();
 app.use(bodyParser.json({ type: 'application/json' })); //body-parser extracts the entire body portion of an incoming request stream and exposes it on req.body.
 
-function getActualURL(channel) {
+function getActualURL(channel, listen_key) {
     let channels = config.diFM.channels;
     let channelObject = channels[channel];
-    let url = channelObject.baseUrl + channel.toLowerCase() + channelObject.suffix + '?' + config.diFM.listenKey;
+    let url = channelObject.baseUrl + channel.toLowerCase() + channelObject.suffix + '?' + listen_key;
 
     return url;
 }
@@ -31,7 +31,7 @@ app.post('/alexa-di-fm/', function (req, res) {
 });
 
 app.get('/di/:channel', function (req, res) {
-    let url = getActualURL(req.params.channel);
+    let url = getActualURL(req.params.channel, req.query.listen_key);
     if (req.query.validate == '1') {
         console.log("Validating URL '" + url + "'");
         request.get(url).on('response', function (response) {

@@ -32,12 +32,12 @@ function getChannelsList() {
 
 function getURL(channelName, validate) {
     validate = validate ? "1" : "0";
-    let url = "https://" + config.server.url + "/" + channelName.replace(/\s+/g, '') + "?validate=" + validate;
+    let url = "https://" + config.server.url + "/" + channelName.replace(/\s+/g, '') + "?validate=" + validate + "&listen_key=" + config.diFM.listenKey;
     return url;
 }
 
 function launch(alexa) {
-    alexa.response.speak("Tell Digital Imported what channel you want to play");
+    alexa.response.speak("Tell Digitally Imported what channel you want to play");
     stop(alexa);
 }
 
