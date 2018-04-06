@@ -4,9 +4,10 @@ Web server for your Amazon Alexa skill to play radios on Digitally Imported, Cla
 <!-- TOC -->
 - [Alexa DI.FM Skill for Node.js](#alexa-skill-digitally-imported)
 	- [Overview](#overview)
-	- [Creating your own skill for Alexa](#creating-skill)
+	- [Creating your own skill for Alexa](#creating-your-own-skill-for-alexa)
 	- [Setup Guide](#setup-guide)
 	- [Getting Started](#getting-started)
+	- [Tips](#tips)
 <!-- /TOC -->
 
 ## Overview
